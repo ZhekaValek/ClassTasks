@@ -9,11 +9,11 @@
 
 int main(int argc, const char * argv[]) {
     int x,h,n,res;
-    std::cout << "Введите x";
+    std::cout << "Введите x ";
     std::cin >> x;
-    std::cout << "Введите h";
+    std::cout << "Введите h ";
     std::cin >> h;
-    std::cout << "Введите n";
+    std::cout << "Введите n ";
     std::cin >> n;
     for (int i=0; i<n; i++) {
         res=x+(h*i);
