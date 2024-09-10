@@ -1,30 +1,39 @@
 //
-//  main.cpp
+//  Task 1.cpp
 //  ClassTasks
 //
-//  Created by Женя Валек on 09.09.2024.
+//  Created by Женя Валек on 10.09.2024.
+//
+
+#include "Task 1.hpp"
+// Программа для вычисления n-го числа Фибоначчи
 //
 
 #include <iostream>
 
-int main(int argc, const char * argv[]) {
-    int x,h,n,res;
-    std::cout << "Введите x ";
-    std::cin >> x;
-    std::cout << "Введите h ";
-    std::cin >> h;
-    std::cout << "Введите n ";
-    std::cin >> n;
-    for (int i=0; i<n; i++) {
-        res=x+(h*i);
-        if(res>=5){
-            res=2*res+3;
-        }
-        else{
-            res=x*(x+2);
-        }
-        std::cout<< res<<std::endl;
-    }
-    
-    return 0;
-}
+using namespace std;
+
+int main()
+  {// Пусть последовательность чисел задана реккурентным выражением
+   //   f(i)=f(i-1)+f(i-2), f(0)=0, f(1)=1
+   // Для заданного n>=0 вычислить f(n)
+
+   int f, f0 = 0, f1 = 1;
+   int n;
+   cout << "Enter n: ";
+   cin >> n;
+   if (n == 0)
+    f = f0;
+   else if (n == 1)
+     f = f1;
+   else
+     for (int i=2; i <=n; ++i)
+       {
+        f = f1 + f0;
+        f0 = f1;
+        f1 = f;
+       }
+   cout << "f(" << n << ") = " << f << endl;
+   return 0;
+  }
+
