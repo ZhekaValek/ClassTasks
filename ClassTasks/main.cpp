@@ -1,13 +1,8 @@
-//
-//  main.cpp
-//  ClassTasks
-//
-//  Created by Женя Валек on 09.09.2024.
-//
+
 
 #include <iostream>
 
-int main(int argc, const char * argv[]) {
+int main() {
     int x,h,n,res;
     std::cout << "Введите x ";
     std::cin >> x;
@@ -16,14 +11,15 @@ int main(int argc, const char * argv[]) {
     std::cout << "Введите n ";
     std::cin >> n;
     for (int i=0; i<n; i++) {
-        res=x+(h*i);
-        if(res>=5){
-            res=2*res+3;
+        
+        if(x>=5){
+            x=2*x+3;
         }
         else{
-            res=x*(x+2);
+            x=x*(x+2);
         }
-        std::cout<< res<<std::endl;
+        std::cout<< x<<std::endl;
+        x+=h;
     }
     
     return 0;
