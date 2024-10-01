@@ -1,57 +1,94 @@
 #include <iostream>
 
-double polinom2(double f0,double f1,double f2,double n, double x){
-    double f,s2,per;
-    s2=f0+f1*x+f2*x*x;
-    per=x*x;
-    for (int i=3; i<=n; ++i) {
-        per*=x;
-        f=3*f2/f1+4*f0;
-        f0=f1;
-        f1=f2;
-        f2=f;
-        s2+=f2*per;
-    }
-    return s2;
-}
-double polinom1(double f0,double f1,double f2,double n, double x){
-    double s1,f;
-            s1=f0*x*x+f1*x+f2;
-            for (int i=3; i<=n; ++i) {
-                f=3*f2/f1+4*f0;
-                f0=f1;
-                f1=f2;
-                f2=f;
-                s1=s1*x+f2;
-                
-                
-            }
-            return s1;
-            
+//Домашнее задание с нахождением минимального положительного
+/*double findMinPol(double a[]){
+    int per=0;
+    
+    for (int i=0; i<=sizeof(a); ++i) {
+        if(a[i]>0){
+            per=a[i];
+            break;
         }
-int main()
-{
+    }
+    for (int i=0; i<=sizeof(a); ++i) {
+        if(a[i]<per&&a[i]>0){
+            per=a[i];
+        }
+    }
+    return per;
     
-    
-    double f0,f1,f2,f,n,s1,s2,x,per,p1,p2;
-    per=1;
-    std::cout<<"Введите f0,f1,f2,n,x:";
-    std::cin>>f0>>f1>>f2>>n>>x;
-    if(n==0){
-        std::cout<<f0<<" "<<f0<<"\n";
-    }
-    else if(n==1){
-        std::cout<<f0*x+f1<<" "<<f0+f1*x<<"\n";
-    }
-    else if(n==2){
-        std::cout<<f0*x*x+f1*x+f2<<" "<<f0+f1*x+f2*x*x<<"\n";
-    }
+}
+
+
+int main(){
+    double a[]={10.0,-10.0,0.000000001,-2.0,-3.0,-4.0,-5.0,-6.0,-7.0,-8.0,-9.0,-10.0};
+    int otv=findMinPol(a);
+    if(otv!=0){
+        std::cout<<otv<<"\n";}
     else{
-        p2=polinom2(f0, f1, f2, n, x);
-        p1=polinom1(f0, f1, f2, n, x);
-        std::cout<<p1<<" ";
-        std::cout<<p2<<"\n";
+        std::cout<<"нет положительных значений\n";
     }
     return 0;
+}*/
+
+
+
+
+//Программа нахождения(бинарный поиск)
+/*
+ int find(std::vector<int> array,int number){
+ int pos=0;
+ int leftLim=0;
+ int rightLim=int(array.size())-1;
+ do {
+ pos=(rightLim-leftLim)/2+leftLim;
+ if(number>array[pos]&&pos==int(array.size())-2){
+ pos+=1;
+ }
+ if(array[pos]==number){
+ break;
+ }
+ else{
+ 
+ if(number>array[pos]){
+ leftLim=pos;
+ }
+ else{
+ rightLim=pos;
+ }
+ }
+ 
+ } while (true);
+ return pos;
+ }
+ int main(){
+ std::vector<int> array={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
+ int pos=find(array,array[15]);
+ std::cout<<pos;
+ }
+ */
+
+
+//решать задания в документах сортировка и строки выделенные зеленым цветом
+//выполнить за кол-во шагов равное или меньше n, где n -- размер одномерного массива внтри двумерного массива
+int main(){
+    int res=-1;
+    std::vector<std::vector<int>> array={{2,1,2,2,2},
+                                         {0,2,0,0,0},
+                                         {2,1,2,2,2},
+                                         {2,1,2,2,2},
+                                         {2,1,2,2,2}};
+    for (int i=0; i<array.size(); ++i) {
+        if(array[0][i]==1&&array[i][0]==0){
+            std::cout<<"Hello\n";
+        }
+    }
+    if(res!=-1){
+        std::cout<<res<<"\n";}
+    else{
+        std::cout<<"нет таких i\n";
+    }
 }
+
+
 
