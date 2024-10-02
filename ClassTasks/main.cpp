@@ -70,24 +70,29 @@ int main(){
 
 
 //решать задания в документах сортировка и строки выделенные зеленым цветом
-//выполнить за кол-во шагов равное или меньше n, где n -- размер одномерного массива внтри двумерного массива
-int main(){
-    int res=-1;
-    std::vector<std::vector<int>> array={{2,1,2,2,2},
-                                         {0,2,0,0,0},
-                                         {2,1,2,2,2},
-                                         {2,1,2,2,2},
-                                         {2,1,2,2,2}};
+//выполнить за кол-во шагов равное или меньше n, где n -- размер одномерного массива внутри двумерного массива
+
+
+static void findRow(std::vector<std::vector<int>>& array){
+    
     for (int i=0; i<array.size(); ++i) {
-        if(array[0][i]==1&&array[i][0]==0){
-            std::cout<<"Hello\n";
+        std::vector<int> checker(array.size());
+        checker[i]=array[i][i];
+        if(checker==array[i]){
+            std::cout<<i<<"\n";
         }
     }
-    if(res!=-1){
-        std::cout<<res<<"\n";}
-    else{
-        std::cout<<"нет таких i\n";
-    }
+    return;
+}
+int main(){
+    std::vector<std::vector<int>> array={{2,1,1,1,1},
+                                         {0,2,0,1,1},
+                                         {0,1,2,1,1},
+                                         {0,0,0,0,1},
+                                         {0,0,0,0,2}};
+    
+    ::findRow(array);
+    
 }
 
 
