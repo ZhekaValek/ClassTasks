@@ -72,27 +72,37 @@ int main(){
 //решать задания в документах сортировка и строки выделенные зеленым цветом
 //выполнить за кол-во шагов равное или меньше n, где n -- размер одномерного массива внутри двумерного массива
 
-
-static void findRow(std::vector<std::vector<int>>& array){
-    
+void findRowTwoCicles(std::vector<std::vector<int>>& array){
+    int res=-1;
     for (int i=0; i<array.size(); ++i) {
-        std::vector<int> checker(array.size());
-        checker[i]=array[i][i];
-        if(checker==array[i]){
-            std::cout<<i<<"\n";
+        if(array[0][i]==1 && array[i][0]==0){
+            for (int j=1; j<array.size(); ++j) {
+                if(!((array[j][i]==1&&array[i][j]==0)||(i==j))){
+                    break;
+                }
+                if(j==array.size()-1){
+                    res=i;
+                }
+            }
         }
     }
+    if(res!=-1){
+        std::cout<<res<<"\n";
+    }else{
+        std::cout<<"нет таких значений\n";
+    }
+    
     return;
 }
+
 int main(){
-    std::vector<std::vector<int>> array={{2,1,1,1,1},
+    std::vector<std::vector<int>> array={{2,1,1,1,0},
                                          {0,2,0,1,1},
                                          {0,1,2,1,1},
                                          {0,0,0,0,1},
                                          {0,0,0,0,2}};
     
-    ::findRow(array);
-    
+    ::findRowTwoCicles(array);
 }
 
 
