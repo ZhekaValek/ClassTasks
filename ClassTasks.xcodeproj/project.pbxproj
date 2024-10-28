@@ -25,10 +25,18 @@
 /* Begin PBXFileReference section */
 		140CA8DF2C8F4FF4004AEF6E /* ClassTasks */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ClassTasks; sourceTree = BUILT_PRODUCTS_DIR; };
 		140CA8E22C8F4FF4004AEF6E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		14B301FE2CC7A0BA006847AA /* TestBundle.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestBundle.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		140CA8DC2C8F4FF4004AEF6E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14B301FB2CC7A0BA006847AA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -50,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				140CA8DF2C8F4FF4004AEF6E /* ClassTasks */,
+				14B301FE2CC7A0BA006847AA /* TestBundle.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -82,6 +91,25 @@
 			productReference = 140CA8DF2C8F4FF4004AEF6E /* ClassTasks */;
 			productType = "com.apple.product-type.tool";
 		};
+		14B301FD2CC7A0BA006847AA /* TestBundle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14B302022CC7A0BA006847AA /* Build configuration list for PBXNativeTarget "TestBundle" */;
+			buildPhases = (
+				14B301FA2CC7A0BA006847AA /* Sources */,
+				14B301FB2CC7A0BA006847AA /* Frameworks */,
+				14B301FC2CC7A0BA006847AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestBundle;
+			packageProductDependencies = (
+			);
+			productName = TestBundle;
+			productReference = 14B301FE2CC7A0BA006847AA /* TestBundle.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -89,10 +117,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					140CA8DE2C8F4FF4004AEF6E = {
 						CreatedOnToolsVersion = 15.4;
+					};
+					14B301FD2CC7A0BA006847AA = {
+						CreatedOnToolsVersion = 16.0;
 					};
 				};
 			};
@@ -110,9 +141,20 @@
 			projectRoot = "";
 			targets = (
 				140CA8DE2C8F4FF4004AEF6E /* ClassTasks */,
+				14B301FD2CC7A0BA006847AA /* TestBundle */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		14B301FC2CC7A0BA006847AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		140CA8DB2C8F4FF4004AEF6E /* Sources */ = {
@@ -120,6 +162,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				140CA8E32C8F4FF4004AEF6E /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14B301FA2CC7A0BA006847AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +209,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -221,6 +271,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -245,6 +296,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -253,7 +305,38 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		14B302032CC7A0BA006847AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Me-myself-I.TestBundle";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+			};
+			name = Debug;
+		};
+		14B302042CC7A0BA006847AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Me-myself-I.TestBundle";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
 			};
 			name = Release;
 		};
@@ -274,6 +357,15 @@
 			buildConfigurations = (
 				140CA8E72C8F4FF4004AEF6E /* Debug */,
 				140CA8E82C8F4FF4004AEF6E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14B302022CC7A0BA006847AA /* Build configuration list for PBXNativeTarget "TestBundle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14B302032CC7A0BA006847AA /* Debug */,
+				14B302042CC7A0BA006847AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
